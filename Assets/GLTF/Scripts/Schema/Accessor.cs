@@ -361,8 +361,9 @@ namespace GLTF
 					}
 					else
 					{
-						stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
-						for (var idx = 0; idx < Count; idx++)
+                        stride =  BufferView.Value.ByteStride;
+//                        stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
+                        for (var idx = 0; idx < Count; idx++)
 						{
 							var x = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride));
 							var y = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride) + sizeof(float));
@@ -453,8 +454,10 @@ namespace GLTF
 					}
 					else
 					{
-						stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
-						for (var idx = 0; idx < Count; idx++)
+                        stride = BufferView.Value.ByteStride;
+//                          stride = numComponents * sizeof(float);
+//                        stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
+                        for (var idx = 0; idx < Count; idx++)
 						{
 							var x = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride));
 							var y = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride) + sizeof(float));
@@ -480,8 +483,8 @@ namespace GLTF
 			switch (ComponentType)
 			{
 				case GLTFComponentType.Byte:
-					stride = numComponents * sizeof(sbyte) + BufferView.Value.ByteStride;
-					for (var idx = 0; idx < Count; idx++)
+                    stride = numComponents * sizeof(sbyte) + BufferView.Value.ByteStride;
+                    for (var idx = 0; idx < Count; idx++)
 					{
 						var x = (sbyte)bufferData[totalByteOffset + (idx * stride)];
 						var y = (sbyte)bufferData[totalByteOffset + (idx * stride) + sizeof(sbyte)];
@@ -541,8 +544,9 @@ namespace GLTF
 					}
 					else
 					{
-						stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
-						for (var idx = 0; idx < Count; idx++)
+                        stride = BufferView.Value.ByteStride;
+//                        stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
+                        for (var idx = 0; idx < Count; idx++)
 						{
 							var x = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride));
 							var y = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride) + sizeof(float));
@@ -630,8 +634,9 @@ namespace GLTF
 					}
 					else
 					{
-						stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
-						for (var idx = 0; idx < Count; idx++)
+                        stride = BufferView.Value.ByteStride;
+//                        stride = numComponents * sizeof(float) + BufferView.Value.ByteStride;
+                        for (var idx = 0; idx < Count; idx++)
 						{
 							var r = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride));
 							var g = BitConverter.ToSingle(bufferData, totalByteOffset + (idx * stride) + sizeof(float));
